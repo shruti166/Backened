@@ -50,17 +50,6 @@ const userSchema = mongoose.Schema({
 
 const userModel = mongoose.model('userModel', userSchema);
 
-// (async function createUser() {
-//     let user = {
-//         name: 'Shruti',
-//         email: 'abc@gmail.com',
-//         password: '123',
-//         minLength:8
-//     }
-//     let data = await userModel.create(user);
-//     console.log(data);
-// })();
-
 
 //CRUD OPERATIONS
 
@@ -76,6 +65,7 @@ async function addUsers(req, res) {
     res.send(data);
 }
 //HOOKS TO CHECK WETHER PASSWORD NAD CONFIRM PASSWORD ARE SAME OR NOT
+
 
 userSchema.pre('save', function(){
     console.log("before saving in db", this)

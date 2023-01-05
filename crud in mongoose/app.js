@@ -53,16 +53,17 @@ const userModel = mongoose.model('userModel', userSchema);
 
 //CRUD OPERATIONS
 
-
+//GET
 async function getAllUsers(req, res) {
     let allUsers = await userModel.find();
     res.send(allUsers)
 }
-
+//POST
 async function addUsers(req, res) {
     let data = req.body;
     let user = userModel.create(data);
     res.send(data);
 }
+//
 
 app.listen(3003);
